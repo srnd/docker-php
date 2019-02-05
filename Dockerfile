@@ -32,6 +32,7 @@ RUN apt-get update \
         php-imagick \
         php7.3-ldap \
         php-yaml \
+        cron \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && composer global require hirak/prestissimo \
     && composer clear-cache
