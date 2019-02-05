@@ -39,6 +39,8 @@ RUN apt-get update \
 COPY overrides.conf /etc/php/7.3/fpm/pool.d/z-overrides.conf
 COPY php-fpm-startup /usr/bin/php-fpm
 
+RUN touch /run/php/php-fpm.sock && chown www-data:www-data /run/php/php-fpm.sock
+
 RUN sed -i 's/post_max_size = 8M/post_max_size = 108M/g' /etc/php/7.3/fpm/php.ini
 RUN sed -i 's/upload_max_filesize = 2M/upload_max_filesize = 100M/g' /etc/php/7.3/fpm/php.ini
 
