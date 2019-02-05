@@ -54,5 +54,5 @@ COPY nginx.conf /etc/nginx/nginx.conf
 RUN cat /etc/php/7.3/fpm/php.ini
 
 # Run it!
-CMD /usr/bin/php-fpm &; /usr/sbin/nginx
+CMD /usr/bin/php-fpm & /usr/sbin/nginx
 EXPOSE 80 443
