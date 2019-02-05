@@ -9,7 +9,7 @@ RUN apt-get update \
     && echo "deb http://ppa.launchpad.net/ondrej/php/ubuntu bionic main" > /etc/apt/sources.list.d/ondrej-php.list \
     && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4F4EA0AAE5267A6C \
     && apt-get update \
-    && apt-get -y --no-install-recommends install \
+    && DEBIAN_FRONTEND=noninteractive apt-get -y --no-install-recommends install \
         ca-certificates \
         curl \
         unzip \
